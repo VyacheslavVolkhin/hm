@@ -515,7 +515,6 @@ body {
   top: 50%;
   right: 30px;
   margin-top: -30px;
-  z-index: 6;
 }
 .item-tile-main .tile-link {
   z-index: 5;
