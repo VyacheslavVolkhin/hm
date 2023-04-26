@@ -1354,6 +1354,10 @@ body #swipebox-top-bar {
   top: 0;
   transform: none !important;
 }
+body #swipebox-bottom-bar,
+body #swipebox-top-bar {
+  background-color: transparent;
+}
 @media (max-width: 767px) {
   body #swipebox-slider .slide .swipebox-video-container {
     padding: 15px;
