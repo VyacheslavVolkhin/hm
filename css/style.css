@@ -161,8 +161,8 @@ h6:first-child,
 }
 h1,
 .h1-title {
-  font-size: 45px;
-  font-size: 5rem;
+  font-size: 36px;
+  font-size: 4rem;
   line-height: 1.24;
 }
 h2,
@@ -207,7 +207,7 @@ h2,
   }
   h1,
   .h1-title {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
   h2,
   .h2-title {
@@ -446,6 +446,10 @@ body {
   overflow: hidden;
   height: 126px;
   height: 14rem;
+  transition: all ease 0.2s;
+}
+.item-tile-logo:hover {
+  opacity: 0.5;
 }
 .item-tile-logo img,
 .item-tile-logo svg {

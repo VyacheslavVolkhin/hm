@@ -49,14 +49,6 @@ $(document).ready(function(){
             nextArrow: false,
             autoplay: true,
             autoplaySpeed: 3000,
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                    }
-                },
-            ]
         });
         $('.main-info-box .slider').on('afterChange', function (event, slick, currentSlide, nextSlide) {
             $('.main-info-box .info-wrap li.active').removeClass('active');
