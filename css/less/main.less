@@ -1,9 +1,16 @@
 :root {
-	--clr-base: #000;
-	--clr-att: #f00;
+	--clr-base: #000000;
+	--clr-att: #FF006A;
+	--clr-att-hover: #FF2B4E;
+	--clr-light: #777777;
+    --clr-border: #CCCCCC;
+    --clr-bg: #F2F2F2;
+    --bradius: 2rem;
 
 	--min: 320px;
-	--max: 1200px;
+	--max: 1920px;
+    
+    --paddingContainer: 15px;
 
 	font-size: 10px;
 }
@@ -17,11 +24,14 @@
 			main styles
 \* ----------------------------------- */
 body {
-	color: var(--clr-base, #000);
+	color: var(--clr-base);
 	background: #fff;
+    font-size: 18px;
+    line-height: (24/18);
 }
-p, ul, ol {
+p, ul, ol, table, blockquote, .bq-text {
 	position: relative;
+    margin-bottom: (24/18em);
 	img {
 		max-width: 100%;
 	}
@@ -29,24 +39,77 @@ p, ul, ol {
 		margin-bottom: 0 !important;
 	}
 }
-
 li {
 	position: relative;
 }
+ol {
+    counter-reset: li; 
+    list-style: none;
+    li {
+    	position: relative;
+        padding-left: (70/18em);
+        margin-bottom: (30/18em);
+        cursor: default;
+        min-height: (40/18em);
+        display: flex;
+        align-items: center;
+        &:hover {
+            &:before {
+                background-color: var(--clr-att);
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    	&:before {
+    		content: counter(li); 
+			counter-increment: li; 
+            display: block;
+            margin: 0;
+            margin-top: (-20/18em);
+            transition: all ease 0.2s;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: (40/18em);
+            height: (40/18em);
+            line-height: (40/18em);
+            border-radius: 6px;
+            background-color: var(--clr-light);
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+    	}
+    }
+}
+.menu, .list {
+    margin: 0;
+    padding: 0;
+    li {
+        margin: 0;
+        padding: 0;
+        &:before {
+            display: none;
+        }
+    }
+}
 a {
-	text-decoration: none;
-	color: var(--clr-att, #f00);
-	&:hover {
-		text-decoration: none;
-		color: var(--clr-att, #f00);
-	}
+    text-decoration: none;
+    color: var(--clr-att);
+    &:hover {
+        text-decoration: none;
+        color: var(--clr-att-hover);
+    }
 }
 a.link-main, .link-main {
-	text-decoration: none;
-	border-bottom: 1px solid;
-	&:hover {
-		border-bottom: none;
-	}
+    text-decoration: none;
+    border-bottom: 1px solid;
+    &:hover {
+    }
+}
+.link-phone {
+    white-space: nowrap;
 }
 h1, .h1-title,
 h2, .h2-title,
@@ -56,7 +119,76 @@ h5, .h5-title,
 h6, .h6-title {
 	display: block;
 	position: relative;
+    font-weight: 600;
+    margin: 1em 0;
     &:first-child {
         margin-top: 0;
+    }
+}
+h1, .h1-title {
+    font-size: 5rem;
+    line-height: (62/50);
+}
+h2, .h2-title {
+    font-size: 3.6rem;
+    line-height: (49/36);
+}
+.text-att, .title-att {
+    color: var(--clr-att);
+}
+.text-light, .title-light {
+    color: var(--clr-light);
+}
+.text-center, .title-center {
+    text-align: center;
+}
+@media (max-width: 1799px) {
+    :root {
+        font-size: 9.5px;
+    }
+}
+@media (max-width: 1399px) {
+    :root {
+        font-size: 9px;
+    }
+    body {
+        font-size: 16px;
+    }
+}
+@media (max-width: 1199px) {
+    :root {
+        font-size: 8.5px;
+    }
+}
+@media (max-width: 1023px) {
+    :root {
+        font-size: 8px;
+    }
+    h1, .h1-title {
+        font-size: 4rem;
+    }
+    h2, .h2-title {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 767px) {
+    :root {
+        font-size: 7px;
+    }
+    body {
+        font-size: 14px;
+    }
+    h1, .h1-title {
+        font-size: 3.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    :root {
+        --paddingContainer: 25px;
+    }
+}
+@media (min-width: 1400px) {
+    :root {
+        
     }
 }

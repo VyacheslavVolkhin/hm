@@ -1,0 +1,177 @@
+/* ----------------------------------- *\
+			inputs elements styles
+\* ----------------------------------- */
+
+.btn {
+    height: 6rem;
+    border-radius: 0.8rem;
+    padding: 0 4.6rem;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    min-height: 50px;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #000;
+    &:hover {
+        color: #fff;
+        background-color: var(--clr-att);
+        border-color: var(--clr-att);
+    }
+    &.button-att {
+        background-color: var(--clr-att);
+        border-color: var(--clr-att);
+        color: #fff;
+        &:hover {
+            color: #fff;
+            background-color: var(--clr-att-hover);
+            border-color: var(--clr-att-hover);
+        }
+    }
+}
+.btn-action-ico {
+    min-width: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 40px;height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    transition: all ease 0.2s;
+    flex-shrink: 0;
+    &:not(.btn) {
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    &.btn {
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        display: block;
+    }
+    &:before, &:after, [class*="icon-"], img, svg {
+        display: block;
+        position: absolute;
+        top: 0;bottom: 0;left: 0;right: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        transition: all ease 0.2s;
+    }
+    img, svg {
+        max-width: 24px;
+        max-height: 24px;
+    }
+    &:before, &:after {
+        content: "";
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 24px auto;
+    }
+    &:hover {
+        text-decoration: none;
+        &:not(.btn) {
+            background: none;
+            box-shadow: none;
+        }
+    }
+    &.ico-arrow {
+        z-index: 20;
+        cursor: pointer;
+        border-radius: 6px;
+        border: 1px solid #000;
+        &:before {
+            background-image: url(../img/icons/arrow-slider.svg);
+        }
+        &:hover {
+            background-color: #000;
+            border-color: #000;
+            &:before {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+    &.ico-arrow-next {
+        &:before {
+            .t-rotate(180deg);
+        }
+    }
+    &.ico-arrow-down {
+        &:before {
+            .t-rotate(-90deg);
+        }
+    }
+    &.ico-close {
+        &:after, &:before {
+            width: 20px;
+            height: 2px;
+            top: 50%;
+            left: 50%;
+            bottom: auto;
+            right: auto;
+            margin: -1px 0 0 -10px;
+            background: var(--clr-base);
+        }
+        &:before {
+            .t-rotate(45deg);
+        }
+        &:after {
+            .t-rotate(-45deg);
+        }
+    }
+    &.ico-play {
+        border-radius: 8px;
+        border: 2px solid #000;
+        background-color: #000;
+        &:hover {
+            background-color: var(--clr-att);
+            border: 2px solid var(--clr-att);
+        }
+        &:before {
+            background-image: url(../img/icons/play.svg);
+            background-size: 56.6% auto;
+            filter: brightness(0) invert(1);
+        }
+    }
+    &.ico-play-border {
+        border-radius: 8px;
+        border: 2px solid #000;
+        background-color: transparent;
+        &:hover {
+            background-color: #FF006A;
+            border-color: #FF006A;
+            &:before {
+                filter: brightness(0) invert(1);
+            }
+        }
+        &:before {
+            background-image: url(../img/icons/play-border.svg);
+            background-size: 56.6% auto;
+        }
+    }
+}
+body {
+    #swipebox-slider .slide .swipebox-video-container {
+        border-radius: var(--bradius);
+        background-color: #fff;
+        box-shadow: 0px 40px 100px rgba(0, 0, 0, 0.25);
+        padding: 4rem;
+    }
+    #swipebox-top-bar {
+        top: 0;
+        transform: none !important;
+    }
+}
+@media (max-width: 767px) {
+    body {
+        #swipebox-slider .slide .swipebox-video-container {
+            padding: 15px;
+        }
+    }
+}
